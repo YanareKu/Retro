@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Care</title>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		
+		<script type="text/javascript" src="http://www.teera.net/games/jsShared/foundationMisc.js"></script>
+		<script type="text/javascript" src="http://www.teera.net/games/jsShared/foundationInput.js"></script>
+		<script type="text/javascript" src="http://www.teera.net/games/jsShared/foundationSpatial.js"></script>
+		<script type="text/javascript" src="http://www.teera.net/games/jsShared/foundationColor.js"></script>
+		<script type="text/javascript" src="http://www.teera.net/games/jsShared/foundationGraphics.js"></script>
+		<script type="text/javascript" src="http://www.teera.net/games/jsShared/foundationGame.js"></script>
+		<script type="text/javascript" src="http://www.teera.net/games/jsShared/foundationHTML.js"></script>
+		
+		<script type="text/javascript" src="gameUtil.js"></script>
+		<script type="text/javascript" src="gameScenes.js"></script>
+		<script type="text/javascript" src="gameCore.js"></script>
+		
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<center>
+			<div id="blurb"></div>
+		</center>
+
+		<script type="text/javascript">
+		$(function() {
+			if( GAME.Bind( LoadGame, MainLoop ) ) {
+				ASSETS.RequestAssetList( GAME.GetState().imagePath, neededAssets, function( images ) {
+					GAME.ChangeScene( mainScene );
+				} );
+			}
+		} );
+		</script>
+		
+		<center>
+			<canvas id="displayCanvas" width="640" height="480"></canvas>
+		</center>
+		<canvas id="bufferCanvas" width="320" height="240" style="display:none;"></canvas>
+	</body>
+</html>
