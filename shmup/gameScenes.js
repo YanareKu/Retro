@@ -11,7 +11,7 @@ mainScene = {
 		if( INPUT.GetKeyDown('down') ) { state.user.ship.y += state.user.ship.speed * deltaTime; }
 		if( INPUT.GetKeyDown('up') ) { state.user.ship.y -= state.user.ship.speed * deltaTime; }
 
-		BindShip( state );
+		BindObject( state );
 
 	},
 	
@@ -23,7 +23,7 @@ mainScene = {
 		_ctx.fillRect( 0,0, state.screen.w,state.screen.h );
 			
 		// draw the user ship
-		DrawShip( _ctx, state.user.ship );
+		DrawObject( _ctx, state.user.ship );
 	}
 };
 

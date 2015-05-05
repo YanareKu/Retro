@@ -1,16 +1,5 @@
-// returns a new ship class from explicit values
-//  - this basically is so we don't have to worry about typos entering the dictionary by hand all over the place
-function CreateShip( x, y, image, speed ) {
-	return {
-		x: x,
-		y: y,
-		image: image,
-		speed: speed,
-	};
-}
-
 // specialized draw function that will draw the ship's image centered around its X,Y on a specified canvas context
-function DrawShip( ctx, ship ) {
+function DrawObject( ctx, ship ) {
 
 	var imageAsset = ASSETS.GetAsset( ship.image );
 
@@ -27,7 +16,7 @@ function DrawShip( ctx, ship ) {
 }
 
 //Creates player boundaries so that the ship cannot go past the edges of the screen.
-function BindShip( state ) {
+function BindObject( state ) {
 	var imageAsset = ASSETS.GetAsset( state.user.ship.image );
 
 	state.user.ship.x = Math.max ( state.user.ship.x, imageAsset.width/2 );

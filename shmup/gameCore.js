@@ -17,7 +17,8 @@ function LoadGame( document ) {
 		gameHolds : 0,
 		
 		user : {
-			ship: CreateShip( 160, 220, 'ship-1.png', 64.0 )
+			ship: CreateShip( 160, 220, 'ship-1.png', 64.0 ),
+			bullets: [CreateBullet(160, 200, 'ship-3.png', 0, 0), CreateBullet(160, 200, 'ship-3.png', 0, 0)]
 		},
 	};
 	
