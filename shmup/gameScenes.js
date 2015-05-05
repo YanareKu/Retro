@@ -4,7 +4,15 @@ mainScene = {
 	},
 	
 	update: function( state, deltaTime ) {
+		var imageAsset = ASSETS.GetAsset( state.user.ship.image );
+
 		if( INPUT.GetKeyDown('left') ) { state.user.ship.x -= state.user.ship.speed * deltaTime; }
+		if( INPUT.GetKeyDown('right') ) { state.user.ship.x += state.user.ship.speed * deltaTime; }
+		if( INPUT.GetKeyDown('down') ) { state.user.ship.y += state.user.ship.speed * deltaTime; }
+		if( INPUT.GetKeyDown('up') ) { state.user.ship.y -= state.user.ship.speed * deltaTime; }
+
+		BindShip( state );
+
 	},
 	
 	draw: function( state ) {
