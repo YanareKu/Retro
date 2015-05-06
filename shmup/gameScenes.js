@@ -11,7 +11,18 @@ mainScene = {
 		if( INPUT.GetKeyDown('down') ) { state.user.ship.y += state.user.ship.speed * deltaTime; }
 		if( INPUT.GetKeyDown('up') ) { state.user.ship.y -= state.user.ship.speed * deltaTime; }
 
+		if( INPUT.GetKeyDown('shift') ) {
+			state.user.bullets.push(CreateShip(state.user.ship.x, state.user.ship.y, 'bullet.png', 200, 200));
+			// for ( n=0; n<(state.user.bullets.length); n++ ) {
+				// && Date.now() - state.lastFire > 100
+			}
+
+			state.lastFire = Date.now();
+		// }
+
 		BindObject( state );
+
+
 
 	},
 	
