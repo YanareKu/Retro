@@ -6,13 +6,26 @@ mainScene = {
 	update: function( state, deltaTime ) {
 		var imageAsset = ASSETS.GetAsset( state.user.ship.image );
 
-		if( INPUT.GetKeyDown('left') ) { state.user.ship.x -= state.user.ship.speed * deltaTime; }
-		if( INPUT.GetKeyDown('right') ) { state.user.ship.x += state.user.ship.speed * deltaTime; }
-		if( INPUT.GetKeyDown('down') ) { state.user.ship.y += state.user.ship.speed * deltaTime; }
-		if( INPUT.GetKeyDown('up') ) { state.user.ship.y -= state.user.ship.speed * deltaTime; }
+		for ( n=0; n<(state.user.bullets.length); n++ ) {
+			if( INPUT.GetKeyDown('left') ) { 
+				state.user.ship.x -= state.user.ship.speed * deltaTime; 
+				state.user.bullets[n].x = state.user.ship.x;
+			}
+			if( INPUT.GetKeyDown('right') ) { 
+				state.user.ship.x += state.user.ship.speed * deltaTime; 
+				state.user.bullets[n].x = state.user.ship.x;
+			}
+			if( INPUT.GetKeyDown('down') ) { 
+				state.user.ship.y += state.user.ship.speed * deltaTime; 
+				state.user.bullets[n].y = state.user.ship.y;
+			}
+			if( INPUT.GetKeyDown('up') ) { 
+				state.user.ship.y -= state.user.ship.speed * deltaTime; 
+				state.user.bullets[n].y = state.user.ship.y;
+			}
 
-		BindObject( state );
-
+			BindObject( state );
+		}
 	},
 	
 	draw: function( state ) {
@@ -23,8 +36,8 @@ mainScene = {
 		_ctx.fillRect( 0,0, state.screen.w,state.screen.h );
 
 		// draw the bullets
-		for ( x=0; x<(state.user.bullets.length); x++ ) {
-			DrawObject( _ctx, state.user.bullets[x] );
+		for ( n=0; n<(state.user.bullets.length); n++ ) {
+			DrawObject( _ctx, state.user.bullets[n] );
 		}
 			
 		// draw the user ship
