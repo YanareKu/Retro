@@ -6,27 +6,15 @@ mainScene = {
 	update: function( state, deltaTime ) {
 		var imageAsset = ASSETS.GetAsset( state.user.ship.image );
 
-		for ( n=0; n<(state.user.bullets.length); n++ ) {
-			if( INPUT.GetKeyDown('left') ) { 
-				state.user.ship.x -= state.user.ship.speed * deltaTime; 
-				state.user.bullets[n].x = state.user.ship.x;
-			}
-			if( INPUT.GetKeyDown('right') ) { 
-				state.user.ship.x += state.user.ship.speed * deltaTime; 
-				state.user.bullets[n].x = state.user.ship.x;
-			}
-			if( INPUT.GetKeyDown('down') ) { 
-				state.user.ship.y += state.user.ship.speed * deltaTime; 
-				state.user.bullets[n].y = state.user.ship.y;
-			}
-			if( INPUT.GetKeyDown('up') ) { 
-				state.user.ship.y -= state.user.ship.speed * deltaTime; 
-				state.user.bullets[n].y = state.user.ship.y;
-			}
+		if( INPUT.GetKeyDown('left') ) { state.user.ship.x -= state.user.ship.speed * deltaTime; }
+		if( INPUT.GetKeyDown('right') ) { state.user.ship.x += state.user.ship.speed * deltaTime; }
+		if( INPUT.GetKeyDown('down') ) { state.user.ship.y += state.user.ship.speed * deltaTime; }
+		if( INPUT.GetKeyDown('up') ) { state.user.ship.y -= state.user.ship.speed * deltaTime; }
 
-			BindObject( state );
-		}
+		BindObject( state );
+
 	},
+	
 	
 	draw: function( state ) {
 		var _ctx = state.canvas.buffer.getContext('2d');

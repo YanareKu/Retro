@@ -16,10 +16,9 @@ function LoadGame( document ) {
 		imagePath: 'http://www.teera.net/games/retro/art/',
 		screen: { w: 320, h: 240, aspect: (320/240) },
 		gameHolds : 0,
-		
 		user : {
 			ship: CreateShip( 160, 220, 'ship-1.png', 64.0 ),
-			bullets: [CreateBullet(160, 220, 'bullet.png', 0, 0), CreateBullet(160, 220, 'bullet.png', 0, 0)]
+			bullets: [CreateBullet(160, 220, 'bullet.png', 200, 200), CreateBullet(160, 220, 'bullet.png', 200, 200)]
 		},
 	};
 	
