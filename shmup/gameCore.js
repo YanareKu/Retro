@@ -3,6 +3,7 @@ var neededAssets = [
 	'ship-2.png',
 	'ship-3.png',
 	'ship-4.png',
+	'bullet.png',
 ];
 
 function LoadGame( document ) {
