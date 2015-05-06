@@ -24,6 +24,10 @@ mainScene = {
 			
 		// draw the user ship
 		DrawObject( _ctx, state.user.ship );
+
+		for ( x=0; x<(state.user.bullets.length); x++ ) {
+			DrawObject( _ctx, state.user.bullets[x] );
+		}
 	}
 };
 

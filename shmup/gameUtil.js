@@ -1,17 +1,17 @@
 // specialized draw function that will draw the ship's image centered around its X,Y on a specified canvas context
-function DrawObject( ctx, ship ) {
+function DrawObject( ctx, obj ) {
 
-	var imageAsset = ASSETS.GetAsset( ship.image );
+	var imageAsset = ASSETS.GetAsset( obj.image );
 
 	// store the width and height of the image file
 	var w = imageAsset.width;
 	var h = imageAsset.height;
 	
-	// find where the top left corner of the ship graphic will be relative to the ship's true position
-	var x = parseInt(ship.x - w/2);
-	var y = parseInt(ship.y - h/2);
+	// find where the top left corner of the obj graphic will be relative to the obj's true position
+	var x = parseInt(obj.x - w/2);
+	var y = parseInt(obj.y - h/2);
 	
-	// draw the centered ship
+	// draw the centered obj
 	ctx.drawImage(imageAsset, x,y, w,h );
 }
 

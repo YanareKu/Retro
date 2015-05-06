@@ -4,7 +4,7 @@ function CreateBullet( x, y, image, vx, vy ) {
 		x: x,
 		y: y,
 		image: image,
-		vx: s,
-		vy: s
+		vx: vx,
+		vy: vy
 	};
 }
