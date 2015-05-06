@@ -21,13 +21,16 @@ mainScene = {
 		// erase everything
 		_ctx.fillStyle = "black";
 		_ctx.fillRect( 0,0, state.screen.w,state.screen.h );
+
+		// draw the bullets
+		for ( x=0; x<(state.user.bullets.length); x++ ) {
+			DrawObject( _ctx, state.user.bullets[x] );
+		}
 			
 		// draw the user ship
 		DrawObject( _ctx, state.user.ship );
 
-		for ( x=0; x<(state.user.bullets.length); x++ ) {
-			DrawObject( _ctx, state.user.bullets[x] );
-		}
+
 	}
 };
 
